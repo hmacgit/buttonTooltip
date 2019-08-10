@@ -1,0 +1,50 @@
+<div
+  style="text-align:center"
+  app-click-outside
+  (clickOutside)="clickOutsideClose($event)"
+  name="dumb-button-demo">
+  <div
+    class="flex">
+    <h2>Button Demo</h2>
+  </div>
+
+  <div
+    class="buttonContainer">
+
+
+    <button
+      class="mr-3 btn btn-primary btn-lg"
+      [title]="'buttonA'"
+      (click)="btnClick($event)">
+      button A
+    </button>
+    <app-tooltip
+      [isShow]="buttonCtrl === 'buttonA' && openTooltip"
+      [btnCtrl]="buttonCtrl"
+      (isTooltipClosed)="isTooltipClosed($event)"
+      [message]="'button A'">
+    </app-tooltip>
+    <button
+      class="btn btn-primary btn-lg"
+      [title]="'buttonB'"
+      (click)="btnClick($event)">
+      button B
+    </button>
+    <app-tooltip
+      [isShow]="buttonCtrl === 'buttonB' && openTooltip"
+      [btnCtrl]="buttonCtrl"
+      (isTooltipClosed)="isTooltipClosed($event)"
+      [message]="'button B'">
+    </app-tooltip>
+  </div>
+
+</div>
+
+
+<!--
+      (isTooltipClicked)="setTooltip($event)"
+
+
+      (clickOutside)="clickOutsideClose()"
+
+-->
